@@ -25,10 +25,6 @@ public class Cell
         {
             return CellType.STRING;
         }
-        if(value.matches(""))
-        {
-            return CellType.FORMULA;
-        }
         return CellType.EMPTY;
     }
 
