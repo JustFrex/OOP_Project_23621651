@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48478448-f35b-4a47-95a9-e1392220db8d" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Exit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Help.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/CommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/CellType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/CellType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/CommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Formula.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Spreadsheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/CommandHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/FileHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/SpreadsheetHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742079646081</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1742751680295</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742751680295</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
