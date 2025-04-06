@@ -8,14 +8,15 @@ import java.util.Scanner;
 
 public class CommandHandler
 {
-    private static final Map<String, Command> commandMap = new HashMap<>();;
+    private static final Map<String, Command> commandMap = new HashMap<>();
+    private FileHandler fileHandler;
 
-    public CommandHandler()
+    public CommandHandler(FileHandler fileHandler)
     {
-        commandMap.put("open", new OpenFile());
-        commandMap.put("close", new CloseFile());
-        commandMap.put("save", new SaveFile());
-        commandMap.put("saveas", new SaveAsFile());
+        commandMap.put("open", new OpenFile(fileHandler));
+        commandMap.put("close", new CloseFile(fileHandler));
+        commandMap.put("save", new SaveFile(fileHandler));
+        commandMap.put("saveas", new SaveAsFile(fileHandler));
         commandMap.put("edit", new EditCell());
         commandMap.put("print", new PrintSpreadsheet());
         commandMap.put("help", new Help());

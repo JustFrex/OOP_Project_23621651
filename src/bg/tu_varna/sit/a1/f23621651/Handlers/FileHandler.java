@@ -2,6 +2,8 @@ package bg.tu_varna.sit.a1.f23621651.Handlers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileHandler
@@ -38,13 +40,43 @@ public class FileHandler
         }
     }
 
-    public void saveFile(String fileName)
+    public void save(File file, String[][] spreadsheet)
     {
-
+        try
+        {
+            FileWriter writer = new FileWriter(file);
+            for (String[] row : spreadsheet)
+            {
+                for (String cell : row)
+                {
+                    writer.write(cell + ",");
+                }
+                writer.write("\n");
+            }
+            writer.close();
+            System.out.println("Successfully saved " + file.getName());
+        }
+        catch (IOException e)
+        {
+            System.out.println("Error saving file: " + e.getMessage());
+        }
     }
 
-    public void saveAsFile(String fileName)
+    public void saveFile(String[][] spreadsheet)
     {
+        if (file != null)
+        {
+            save(file, spreadsheet);
+        }
+        else
+        {
+            System.out.println("File not opened");
+        }
+    }
 
+    public void saveAsFile(String fileName, String[][] spreadsheet)
+    {
+        File file = new File(fileName);
+        save(file, spreadsheet);
     }
 }
