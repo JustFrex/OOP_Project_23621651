@@ -9,8 +9,7 @@ public class Application
     {
         FileHandler fileHandler = new FileHandler();
         CommandHandler handler = new CommandHandler(fileHandler);
-        while(true)
-        {
+        while (true) {
             handler.executeCommand();
         }
     }
