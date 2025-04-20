@@ -7,7 +7,7 @@ public class EditCell implements Command
     private SpreadsheetHandler spreadsheetHandler;
 
     @Override
-    public void executeCommand()
+    public void executeCommand(String[] arguments)
     {
 
     }

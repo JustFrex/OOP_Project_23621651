@@ -10,16 +10,15 @@ public class FileHandler
 {
     private File file;
     private Scanner scanner;
+    private boolean isFileOpen = false;
 
     public void openFile(String fileName)
     {
-        try
-        {
+        try {
             file = new File(fileName);
             scanner = new Scanner(file);
-            System.out.println("Successfully opened " + fileName);
-        }
-        catch (FileNotFoundException e)
+            isFileOpen = true;
+        } catch (FileNotFoundException e)
         {
             System.out.println("File " + fileName + " not found");
         }
@@ -27,14 +26,14 @@ public class FileHandler
 
     public void closeFile()
     {
-        if(scanner != null)
+        if (scanner != null)
         {
             System.out.println("Successfully closed " + file.getName());
             scanner.close();
             scanner = null;
             file = null;
-        }
-        else
+            isFileOpen = false;
+        } else
         {
             System.out.println("File not opened");
         }
@@ -55,8 +54,7 @@ public class FileHandler
             }
             writer.close();
             System.out.println("Successfully saved " + file.getName());
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             System.out.println("Error saving file: " + e.getMessage());
         }
@@ -67,9 +65,7 @@ public class FileHandler
         if (file != null)
         {
             save(file, spreadsheet);
-        }
-        else
-        {
+        } else {
             System.out.println("File not opened");
         }
     }
@@ -78,5 +74,15 @@ public class FileHandler
     {
         File file = new File(fileName);
         save(file, spreadsheet);
+    }
+
+    public Scanner getScanner()
+    {
+        return scanner;
+    }
+
+    public boolean isFileOpen()
+    {
+        return isFileOpen;
     }
 }

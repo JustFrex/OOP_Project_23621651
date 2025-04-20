@@ -3,7 +3,7 @@ package bg.tu_varna.sit.a1.f23621651.Commands;
 public class Help implements Command
 {
     @Override
-    public void executeCommand()
+    public void executeCommand(String[] arguments)
     {
         System.out.println("The following commands are supported:");
         System.out.println("open <file>     opens <file>");

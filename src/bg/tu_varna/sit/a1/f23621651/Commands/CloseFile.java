@@ -12,7 +12,7 @@ public class CloseFile implements Command
     }
 
     @Override
-    public void executeCommand()
+    public void executeCommand(String[] arguments)
     {
         try
         {

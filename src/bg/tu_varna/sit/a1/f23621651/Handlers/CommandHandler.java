@@ -10,15 +10,16 @@ public class CommandHandler
 {
     private static final Map<String, Command> commandMap = new HashMap<>();
     private FileHandler fileHandler;
+    private SpreadsheetHandler spreadsheetHandler;
 
-    public CommandHandler(FileHandler fileHandler)
+    public CommandHandler(FileHandler fileHandler, SpreadsheetHandler spreadsheetHandler)
     {
-        commandMap.put("open", new OpenFile(fileHandler));
+        commandMap.put("open", new OpenFile(fileHandler, spreadsheetHandler));
         commandMap.put("close", new CloseFile(fileHandler));
         commandMap.put("save", new SaveFile(fileHandler));
         commandMap.put("saveas", new SaveAsFile(fileHandler));
         commandMap.put("edit", new EditCell());
-        commandMap.put("print", new PrintSpreadsheet());
+        commandMap.put("print", new PrintSpreadsheet(spreadsheetHandler, fileHandler));
         commandMap.put("help", new Help());
         commandMap.put("exit", new Exit());
     }
@@ -32,7 +33,7 @@ public class CommandHandler
         Command cmd = commandMap.get(command[0].toLowerCase());
         if(cmd != null)
         {
-            cmd.executeCommand();
+            cmd.executeCommand(command);
         }
         else
         {
