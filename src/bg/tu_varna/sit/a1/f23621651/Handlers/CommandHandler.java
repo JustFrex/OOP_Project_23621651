@@ -16,8 +16,8 @@ public class CommandHandler
     {
         commandMap.put("open", new OpenFile(fileHandler, spreadsheetHandler));
         commandMap.put("close", new CloseFile(fileHandler));
-        commandMap.put("save", new SaveFile(fileHandler));
-        commandMap.put("saveas", new SaveAsFile(fileHandler));
+        commandMap.put("save", new SaveFile(fileHandler, spreadsheetHandler));
+        commandMap.put("saveas", new SaveAsFile(fileHandler, spreadsheetHandler));
         commandMap.put("edit", new EditCell());
         commandMap.put("print", new PrintSpreadsheet(spreadsheetHandler, fileHandler));
         commandMap.put("help", new Help());
@@ -29,7 +29,7 @@ public class CommandHandler
         Scanner scanner = new Scanner(System.in);
         System.out.print("> ");
         String input = scanner.nextLine().trim();
-        String[] command = input.split(" ");
+        String[] command = input.split("[\\s]+");
         Command cmd = commandMap.get(command[0].toLowerCase());
         if(cmd != null)
         {

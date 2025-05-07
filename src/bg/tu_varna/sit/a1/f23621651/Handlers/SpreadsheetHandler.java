@@ -67,7 +67,7 @@ public class SpreadsheetHandler
                 {
                     cell = spreadsheet[i][j];
                 }
-                System.out.print(String.format("%-" + (maxWidth[j] + 1) + "s", cell) + "|");
+                System.out.print(String.format("%-" + maxWidth[j] + "s", cell) + "|");
             }
             System.out.println();
         }

@@ -46,9 +46,13 @@ public class FileHandler
             FileWriter writer = new FileWriter(file);
             for (String[] row : spreadsheet)
             {
-                for (String cell : row)
+                for (int i = 0; i < row.length; i++)
                 {
-                    writer.write(cell + ",");
+                    writer.write(row[i]);
+                    if (i < row.length - 1)
+                    {
+                        writer.write(",");
+                    }
                 }
                 writer.write("\n");
             }
@@ -65,7 +69,9 @@ public class FileHandler
         if (file != null)
         {
             save(file, spreadsheet);
-        } else {
+        }
+        else
+        {
             System.out.println("File not opened");
         }
     }
