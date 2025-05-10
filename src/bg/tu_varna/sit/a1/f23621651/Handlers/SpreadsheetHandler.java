@@ -28,11 +28,11 @@ public class SpreadsheetHandler
         for(int i = 0; i < rows; i++)
         {
             String[] row = data.get(i);
-            for(int j = 0; j < row.length; j++)
+            for (int j = 0; j < row.length; j++)
             {
-                spreadsheet[i][j] = row[j];
+                spreadsheet[i][j] = row[j].trim();
             }
-            for(int j = row.length; j < columns; j++)
+            for (int j = row.length; j < columns; j++)
             {
                 spreadsheet[i][j] = "";
             }
