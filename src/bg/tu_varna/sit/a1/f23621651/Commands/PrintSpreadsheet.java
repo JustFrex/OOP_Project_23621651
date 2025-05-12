@@ -20,6 +20,10 @@ public class PrintSpreadsheet implements Command
     {
         try
         {
+            if (arguments.length > 1)
+            {
+                throw new Exception("Command syntax not correct (\"close\")");
+            }
             if (!fileHandler.isFileOpen())
             {
                 throw new Exception("No file is open to print");
@@ -28,7 +32,7 @@ public class PrintSpreadsheet implements Command
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("Error printing file: " + e.getMessage());
         }
 
     }

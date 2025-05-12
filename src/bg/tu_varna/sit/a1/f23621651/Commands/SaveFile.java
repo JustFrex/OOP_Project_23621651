@@ -19,11 +19,15 @@ public class SaveFile implements Command
     {
         try
         {
+            if (arguments.length > 1)
+            {
+                throw new Exception("Command syntax not correct (\"save\")");
+            }
             if (!fileHandler.isFileOpen())
             {
                 throw new Exception("No file is open to save");
             }
-            fileHandler.saveFile(spreadsheetHandler.getSpreadsheet());
+            fileHandler.saveFile(fileHandler.getFile(), spreadsheetHandler.getSpreadsheet());
         }
         catch (Exception e)
         {

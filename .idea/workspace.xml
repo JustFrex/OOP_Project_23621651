@@ -9,12 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48478448-f35b-4a47-95a9-e1392220db8d" name="Changes" comment="init commit">
+    <list default="true" id="48478448-f35b-4a47-95a9-e1392220db8d" name="Changes" comment="changed map key from string to enum">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/Project_Spreadsheet_23621651_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/CommandType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/Exit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/Exit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/Help.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/Help.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Handlers/CommandHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Handlers/CommandHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Handlers/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Handlers/FileHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Handlers/SpreadsheetHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_Spreadsheet_23621651/bg/tu_varna/sit/a1/f23621651/Handlers/SpreadsheetHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/CloseFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/EditCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/OpenFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/PrintSpreadsheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveAsFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Commands/SaveFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/SpreadsheetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/tu_varna/sit/a1/f23621651/Handlers/SpreadsheetHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +64,9 @@
     &quot;accountId&quot;: &quot;8aae6116-204b-435e-90ae-c24ce81788cf&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -143,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746646763501</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changed map key from string to enum">
+      <option name="closed" value="true" />
+      <created>1746881343082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746881343082</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="changed map key from string to enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed map key from string to enum" />
   </component>
 </project>

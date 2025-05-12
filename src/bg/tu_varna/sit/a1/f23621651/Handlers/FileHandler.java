@@ -12,34 +12,30 @@ public class FileHandler
     private Scanner scanner;
     private boolean isFileOpen = false;
 
-    public void openFile(String fileName)
+    public void openFile(String fileName) throws Exception
     {
-        try {
+        try
+        {
             file = new File(fileName);
             scanner = new Scanner(file);
             isFileOpen = true;
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
-            System.out.println("File " + fileName + " not found");
+            throw new Exception(" File " + fileName + " not found");
         }
     }
 
     public void closeFile()
     {
-        if (scanner != null)
-        {
-            System.out.println("Successfully closed " + file.getName());
-            scanner.close();
-            scanner = null;
-            file = null;
-            isFileOpen = false;
-        } else
-        {
-            System.out.println("File not opened");
-        }
+        System.out.println("Successfully closed " + file.getName());
+        scanner.close();
+        scanner = null;
+        file = null;
+        isFileOpen = false;
     }
 
-    public void save(File file, String[][] spreadsheet)
+    public void saveFile(File file, String[][] spreadsheet)
     {
         try
         {
@@ -58,28 +54,17 @@ public class FileHandler
             }
             writer.close();
             System.out.println("Successfully saved " + file.getName());
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.out.println("Error saving file: " + e.getMessage());
-        }
-    }
-
-    public void saveFile(String[][] spreadsheet)
-    {
-        if (file != null)
-        {
-            save(file, spreadsheet);
-        }
-        else
-        {
-            System.out.println("File not opened");
         }
     }
 
     public void saveAsFile(String fileName, String[][] spreadsheet)
     {
         File file = new File(fileName);
-        save(file, spreadsheet);
+        saveFile(file, spreadsheet);
     }
 
     public Scanner getScanner()
@@ -90,5 +75,10 @@ public class FileHandler
     public boolean isFileOpen()
     {
         return isFileOpen;
+    }
+
+    public File getFile()
+    {
+        return file;
     }
 }

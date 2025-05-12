@@ -20,33 +20,27 @@ public class OpenFile implements Command
     @Override
     public void executeCommand(String[] arguments)
     {
-        if (arguments.length > 0)
+        try
         {
-            try
+            if (arguments.length > 2)
             {
-                String filePath = arguments[1];
-                fileHandler.openFile(filePath);
-                File file = new File(filePath);
-                String fileName = file.getName();
-                Scanner scanner = fileHandler.getScanner();
-                if(scanner != null)
-                {
-                    spreadsheetHandler.openSpreadsheet(scanner);
-                    System.out.println("Successfully opened " + fileName);
-                }
-                else
-                {
-                    System.out.println("Error while opening file");
-                }
+                throw new Exception("Command syntax not correct (\"open <file>\")");
             }
-            catch (Exception e)
+            if(arguments.length == 1)
             {
-                System.out.println("Error has occurred: " + e.getMessage());
+                throw new Exception("File name not specified");
             }
+            String filePath = arguments[1];
+            fileHandler.openFile(filePath);
+            File file = new File(filePath);
+            String fileName = file.getName();
+            Scanner scanner = fileHandler.getScanner();
+            spreadsheetHandler.openSpreadsheet(scanner);
+            System.out.println("Successfully opened " + fileName);
         }
-        else
+        catch (Exception e)
         {
-            System.out.println("File name not specified");
+            System.out.println("Error opening file: " + e.getMessage());
         }
     }
 }

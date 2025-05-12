@@ -3,7 +3,6 @@ package bg.tu_varna.sit.a1.f23621651.Commands;
 import bg.tu_varna.sit.a1.f23621651.Handlers.FileHandler;
 import bg.tu_varna.sit.a1.f23621651.Handlers.SpreadsheetHandler;
 
-import java.io.IOException;
 
 public class SaveAsFile implements Command
 {
@@ -21,15 +20,20 @@ public class SaveAsFile implements Command
     {
         try
         {
-            if (arguments.length > 0)
+            if (arguments.length > 2)
             {
-                String fileName = arguments[1];
-                fileHandler.saveAsFile(fileName, spreadsheetHandler.getSpreadsheet());
+                throw new Exception("Command syntax not correct (\"saveas <file>\")");
             }
-            else
+            if (!fileHandler.isFileOpen())
             {
-                System.out.println("File name not specified");
+                throw new Exception("No file is open to save");
             }
+            if(arguments.length == 1)
+            {
+                throw new Exception("File name not specified");
+            }
+            String fileName = arguments[1];
+            fileHandler.saveAsFile(fileName, spreadsheetHandler.getSpreadsheet());
         }
         catch (Exception e)
         {

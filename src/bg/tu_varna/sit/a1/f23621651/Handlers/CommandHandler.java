@@ -18,7 +18,7 @@ public class CommandHandler
         commandMap.put(CommandType.CLOSE, new CloseFile(fileHandler));
         commandMap.put(CommandType.SAVE, new SaveFile(fileHandler, spreadsheetHandler));
         commandMap.put(CommandType.SAVEAS, new SaveAsFile(fileHandler, spreadsheetHandler));
-        commandMap.put(CommandType.EDIT, new EditCell());
+        commandMap.put(CommandType.EDIT, new EditCell(fileHandler, spreadsheetHandler));
         commandMap.put(CommandType.PRINT, new PrintSpreadsheet(spreadsheetHandler, fileHandler));
         commandMap.put(CommandType.HELP, new Help());
         commandMap.put(CommandType.EXIT, new Exit());
