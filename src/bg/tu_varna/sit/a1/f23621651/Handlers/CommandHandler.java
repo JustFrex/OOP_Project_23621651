@@ -6,14 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class CommandHandler
-{
+public class CommandHandler {
     private static final Map<CommandType, Command> commandMap = new HashMap<>();
     private FileHandler fileHandler;
     private SpreadsheetHandler spreadsheetHandler;
 
-    public CommandHandler(FileHandler fileHandler, SpreadsheetHandler spreadsheetHandler)
-    {
+    public CommandHandler(FileHandler fileHandler, SpreadsheetHandler spreadsheetHandler) {
         commandMap.put(CommandType.OPEN, new OpenFile(fileHandler, spreadsheetHandler));
         commandMap.put(CommandType.CLOSE, new CloseFile(fileHandler));
         commandMap.put(CommandType.SAVE, new SaveFile(fileHandler, spreadsheetHandler));
@@ -24,20 +22,16 @@ public class CommandHandler
         commandMap.put(CommandType.EXIT, new Exit());
     }
 
-    public void executeCommand()
-    {
+    public void executeCommand() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("> ");
         String input = scanner.nextLine().trim();
         String[] command = input.split("[\\s]+");
-        try
-        {
+        try {
             CommandType commandType = CommandType.valueOf(command[0].toUpperCase());
             Command cmd = commandMap.get(commandType);
             cmd.executeCommand(command);
-        }
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             System.out.println("Command not found");
         }
 

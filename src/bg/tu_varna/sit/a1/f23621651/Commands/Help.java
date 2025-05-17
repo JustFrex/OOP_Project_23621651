@@ -1,14 +1,10 @@
 package bg.tu_varna.sit.a1.f23621651.Commands;
 
-public class Help implements Command
-{
+public class Help implements Command {
     @Override
-    public void executeCommand(String[] arguments)
-    {
-        try
-        {
-            if(arguments.length > 1)
-            {
+    public void executeCommand(String[] arguments) {
+        try {
+            if (arguments.length > 1) {
                 throw new Exception();
             }
             System.out.println("The following commands are supported:");
@@ -20,9 +16,7 @@ public class Help implements Command
             System.out.println("print                                prints the currently open spreadsheet");
             System.out.println("help                                 prints this information");
             System.out.println("exit                                 exits the program");
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("Command syntax not correct (\"help\")");
         }
     }
