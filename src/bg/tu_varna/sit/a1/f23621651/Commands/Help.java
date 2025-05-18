@@ -1,6 +1,14 @@
 package bg.tu_varna.sit.a1.f23621651.Commands;
 
+/**
+ * Command implementation for displaying available commands and their syntax.
+ */
 public class Help implements Command {
+    /**
+     * Executes the help command.
+     *
+     * @param arguments the command-line arguments
+     */
     @Override
     public void executeCommand(String[] arguments) {
         try {

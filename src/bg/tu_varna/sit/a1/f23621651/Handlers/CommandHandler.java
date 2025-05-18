@@ -6,11 +6,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Handles user command inputs and delegates command execution to appropriate command implementations.
+ */
 public class CommandHandler {
     private static final Map<CommandType, Command> commandMap = new HashMap<>();
     private FileHandler fileHandler;
     private SpreadsheetHandler spreadsheetHandler;
 
+    /**
+     * Constructs a CommandHandler with provided file and spreadsheet handlers.
+     *
+     * @param fileHandler        the file handler instance
+     * @param spreadsheetHandler the spreadsheet handler instance
+     */
     public CommandHandler(FileHandler fileHandler, SpreadsheetHandler spreadsheetHandler) {
         commandMap.put(CommandType.OPEN, new OpenFile(fileHandler, spreadsheetHandler));
         commandMap.put(CommandType.CLOSE, new CloseFile(fileHandler));
@@ -22,17 +31,20 @@ public class CommandHandler {
         commandMap.put(CommandType.EXIT, new Exit());
     }
 
+    /**
+     * Reads a command from the console and executes the corresponding command.
+     */
     public void executeCommand() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("> ");
         String input = scanner.nextLine().trim();
-        String[] command = input.split("[\\s]+");
+        String[] command = input.split("\\s+");
         try {
             CommandType commandType = CommandType.valueOf(command[0].toUpperCase());
             Command cmd = commandMap.get(commandType);
             cmd.executeCommand(command);
         } catch (IllegalArgumentException e) {
-            System.out.println("Command not found");
+            System.out.println("Command not found (input \"help\" to show the available commands)");
         }
 
     }

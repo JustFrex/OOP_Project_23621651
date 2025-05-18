@@ -2,8 +2,10 @@ package bg.tu_varna.sit.a1.f23621651.Commands;
 
 import bg.tu_varna.sit.a1.f23621651.Handlers.FileHandler;
 import bg.tu_varna.sit.a1.f23621651.Handlers.SpreadsheetHandler;
-
-public class EditCell implements Command {
+/**
+ * Command implementation for editing a specific cell in the spreadsheet.
+ */
+ public class EditCell implements Command {
     private FileHandler fileHandler;
     private SpreadsheetHandler spreadsheetHandler;
 
@@ -11,7 +13,11 @@ public class EditCell implements Command {
         this.fileHandler = fileHandler;
         this.spreadsheetHandler = spreadsheetHandler;
     }
-
+    /**
+     * Executes the edit command.
+     *
+     * @param arguments the command-line arguments
+     */
     @Override
     public void executeCommand(String[] arguments) {
         try {

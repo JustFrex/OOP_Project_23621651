@@ -6,6 +6,9 @@ import bg.tu_varna.sit.a1.f23621651.Handlers.SpreadsheetHandler;
 import java.io.File;
 import java.util.Scanner;
 
+/**
+ * Command implementation for opening a spreadsheet file.
+ */
 public class OpenFile implements Command {
     private FileHandler fileHandler;
     private SpreadsheetHandler spreadsheetHandler;
@@ -15,6 +18,11 @@ public class OpenFile implements Command {
         this.spreadsheetHandler = spreadsheetHandler;
     }
 
+    /**
+     * Executes the open command.
+     *
+     * @param arguments the command-line arguments
+     */
     @Override
     public void executeCommand(String[] arguments) {
         try {

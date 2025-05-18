@@ -3,7 +3,9 @@ package bg.tu_varna.sit.a1.f23621651.Commands;
 import bg.tu_varna.sit.a1.f23621651.Handlers.FileHandler;
 import bg.tu_varna.sit.a1.f23621651.Handlers.SpreadsheetHandler;
 
-
+/**
+ * Command implementation for saving the currently open spreadsheet file under a new file name.
+ */
 public class SaveAsFile implements Command {
     private FileHandler fileHandler;
     private SpreadsheetHandler spreadsheetHandler;
@@ -13,6 +15,11 @@ public class SaveAsFile implements Command {
         this.spreadsheetHandler = spreadsheetHandler;
     }
 
+    /**
+     * Executes the saveas command.
+     *
+     * @param arguments the command-line arguments
+     */
     @Override
     public void executeCommand(String[] arguments) {
         try {

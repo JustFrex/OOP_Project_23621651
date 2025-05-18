@@ -1,6 +1,14 @@
 package bg.tu_varna.sit.a1.f23621651.Commands;
 
+/**
+ * Command implementation for terminating the program.
+ */
 public class Exit implements Command {
+    /**
+     * Executes the exit command.
+     *
+     * @param arguments the command-line arguments
+     */
     @Override
     public void executeCommand(String[] arguments) {
         try {

@@ -6,11 +6,19 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * Handles operations related to spreadsheets like opening, editing, printing, and formula evaluation.
+ */
 public class SpreadsheetHandler {
     private int rows;
     private int columns;
     private String[][] spreadsheet;
 
+    /**
+     * Opens a spreadsheet from a given Scanner input.
+     *
+     * @param scanner the Scanner reading the spreadsheet content
+     */
     public void openSpreadsheet(Scanner scanner) {
         List<String[]> data = new ArrayList<>();
         int maxCol = 0;
@@ -34,6 +42,9 @@ public class SpreadsheetHandler {
         }
     }
 
+    /**
+     * Prints the spreadsheet content to the console in a formatted manner.
+     */
     public void printSpreadsheet() {
         int[] maxWidth = new int[columns];
         for (int i = 0; i < columns; i++) {
@@ -54,10 +65,24 @@ public class SpreadsheetHandler {
         }
     }
 
+    /**
+     * Checks if the given cell position exists within the spreadsheet.
+     *
+     * @param row the zero-based row index
+     * @param col the zero-based column index
+     * @return true if the cell exists, false otherwise
+     */
     public boolean isExistingCell(int row, int col) {
         return row >= 0 && row < rows && col >= 0 && col < columns;
     }
 
+    /**
+     * Gets the content of a specified cell, evaluating formulas if present.
+     *
+     * @param row the zero-based row index
+     * @param col the zero-based column index
+     * @return the cell content as a String
+     */
     public String getCell(int row, int col) {
         if (!isExistingCell(row, col)) {
             return "";
@@ -127,10 +152,23 @@ public class SpreadsheetHandler {
         }
     }
 
+    /**
+     * Sets the value of a specific cell.
+     *
+     * @param row   the zero-based row index
+     * @param col   the zero-based column index
+     * @param value the new value or formula to set
+     */
     public void setCell(int row, int col, String value) {
+        System.out.println("Successfully edited cell R" + (row + 1) + "C" + (col + 1));
         spreadsheet[row][col] = value;
     }
 
+    /**
+     * Returns the entire spreadsheet as a 2D String array.
+     *
+     * @return the spreadsheet data
+     */
     public String[][] getSpreadsheet() {
         return spreadsheet;
     }
