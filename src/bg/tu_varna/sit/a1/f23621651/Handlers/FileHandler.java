@@ -47,12 +47,12 @@ public class FileHandler {
      * @param file        the file to save to
      * @param spreadsheet the 2D array representing spreadsheet data
      */
-    public void saveFile(File file, String[][] spreadsheet) {
+    public void saveFile(File file, Cell[][] spreadsheet) {
         try {
             FileWriter writer = new FileWriter(file);
-            for (String[] row : spreadsheet) {
+            for (Cell[] row : spreadsheet) {
                 for (int i = 0; i < row.length; i++) {
-                    writer.write(row[i]);
+                    writer.write(row[i].getValue());
                     if (i < row.length - 1) {
                         writer.write(",");
                     }
@@ -72,7 +72,7 @@ public class FileHandler {
      * @param fileName    the new file name
      * @param spreadsheet the 2D array representing spreadsheet data
      */
-    public void saveAsFile(String fileName, String[][] spreadsheet) {
+    public void saveAsFile(String fileName, Cell[][] spreadsheet) {
         File file = new File(fileName);
         saveFile(file, spreadsheet);
     }

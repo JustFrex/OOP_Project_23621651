@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class SpreadsheetHandler {
     private int rows;
     private int columns;
-    private String[][] spreadsheet;
+    private Cell[][] spreadsheet;
 
     /**
      * Opens a spreadsheet from a given Scanner input.
@@ -20,24 +20,25 @@ public class SpreadsheetHandler {
      * @param scanner the Scanner reading the spreadsheet content
      */
     public void openSpreadsheet(Scanner scanner) {
-        List<String[]> data = new ArrayList<>();
+        List<Cell[]> data = new ArrayList<>();
         int maxCol = 0;
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             String[] values = line.split(",");
-            data.add(values);
+            Cell[] row = new Cell[values.length];
+            for (int i = 0; i < values.length; i++) {
+                row[i] = new Cell(values[i]);
+            }
+            data.add(row);
             maxCol = Math.max(maxCol, values.length);
         }
         rows = data.size();
         columns = maxCol;
-        spreadsheet = new String[rows][columns];
+        spreadsheet = new Cell[rows][columns];
         for (int i = 0; i < rows; i++) {
-            String[] row = data.get(i);
-            for (int j = 0; j < row.length; j++) {
-                spreadsheet[i][j] = row[j].trim();
-            }
-            for (int j = row.length; j < columns; j++) {
-                spreadsheet[i][j] = "";
+            Cell[] row = data.get(i);
+            for (int j = 0; j < columns; j++) {
+                spreadsheet[i][j] = (j < row.length) ? row[j] : new Cell("");
             }
         }
     }
@@ -87,20 +88,16 @@ public class SpreadsheetHandler {
         if (!isExistingCell(row, col)) {
             return "";
         }
-        String value = spreadsheet[row][col];
-        if (value == null || value.isEmpty()) {
-            return "";
-        }
-        if (value.startsWith("=")) {
+        Cell cell = spreadsheet[row][col];
+        if (cell.getType() == CellType.FORMULA) {
             try {
-                String formula = value.substring(1);
-                double result = calculateFormula(formula);
-                return (result == (int) result) ? String.format("%d", (int) result) : String.format(Locale.US, "%.2f", result);
+                double result = calculateFormula(cell.getValue().substring(1));
+                return (result == (int) result) ? String.format("%d", (int) result) : String.valueOf(result);
             } catch (Exception e) {
                 return "ERROR";
             }
         }
-        return value;
+        return cell.getValue();
     }
 
     private double calculateFormula(String formula) throws Exception {
@@ -132,15 +129,20 @@ public class SpreadsheetHandler {
         return result;
     }
 
-    private double parseCell(String token) {
+    private double parseCell(String token) throws Exception {
         token = token.trim();
         if (token.matches("R\\d+C\\d+")) {
             int row = Integer.parseInt(token.substring(1, token.indexOf("C"))) - 1;
             int col = Integer.parseInt(token.substring(token.indexOf("C") + 1)) - 1;
-            String value = getCell(row, col);
-            try {
-                return Double.parseDouble(value);
-            } catch (Exception e) {
+            if (!isExistingCell(row, col)) return 0;
+            Cell cell = spreadsheet[row][col];
+            if (cell.getType() == CellType.FORMULA) {
+                return calculateFormula(cell.getValue().substring(1));
+            }
+            else if (cell.getType() == CellType.INT || cell.getType() == CellType.DOUBLE) {
+                return cell.getNumber();
+            }
+            else {
                 return 0;
             }
         } else {
@@ -161,7 +163,7 @@ public class SpreadsheetHandler {
      */
     public void setCell(int row, int col, String value) {
         System.out.println("Successfully edited cell R" + (row + 1) + "C" + (col + 1));
-        spreadsheet[row][col] = value;
+        spreadsheet[row][col].setValue(value);
     }
 
     /**
@@ -169,7 +171,7 @@ public class SpreadsheetHandler {
      *
      * @return the spreadsheet data
      */
-    public String[][] getSpreadsheet() {
+    public Cell[][] getSpreadsheet() {
         return spreadsheet;
     }
 }

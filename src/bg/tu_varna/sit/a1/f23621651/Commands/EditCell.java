@@ -2,10 +2,11 @@ package bg.tu_varna.sit.a1.f23621651.Commands;
 
 import bg.tu_varna.sit.a1.f23621651.Handlers.FileHandler;
 import bg.tu_varna.sit.a1.f23621651.Handlers.SpreadsheetHandler;
+
 /**
  * Command implementation for editing a specific cell in the spreadsheet.
  */
- public class EditCell implements Command {
+public class EditCell implements Command {
     private FileHandler fileHandler;
     private SpreadsheetHandler spreadsheetHandler;
 
@@ -13,6 +14,7 @@ import bg.tu_varna.sit.a1.f23621651.Handlers.SpreadsheetHandler;
         this.fileHandler = fileHandler;
         this.spreadsheetHandler = spreadsheetHandler;
     }
+
     /**
      * Executes the edit command.
      *

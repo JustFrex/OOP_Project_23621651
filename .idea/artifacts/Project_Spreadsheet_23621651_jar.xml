@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Project_Spreadsheet_23621651:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Project_Spreadsheet_23621651_jar</output-path>
+    <root id="archive" name="Project_Spreadsheet_23621651.jar">
+      <element id="module-output" name="Project_Spreadsheet_23621651" />
+    </root>
+  </artifact>
+</component>
